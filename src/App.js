@@ -7,7 +7,6 @@ import Checkout from './components/checkout/Checkout';
 import Details from './components/details/Details';
 import Navigation from './components/layout/Nav';
 import { AuthProvider } from './components/context/AuthContext';
-import { Container } from 'react-bootstrap';
 import './App.css';
 
 function App() {
@@ -15,7 +14,6 @@ function App() {
     <AuthProvider>
       <Router>
         <Navigation />
-        <Container>
           <Routes>
                 <Route path='/' exact element={ <Home />} />
                 <Route path='/browse' element={ <Browse />} />
@@ -23,7 +21,7 @@ function App() {
                 <Route path='/checkout' element={ <Checkout /> } />
                 <Route path='/details' element={ <Details /> } />
           </Routes>
-        </Container>
+        
       </Router>
     </AuthProvider>
   );
