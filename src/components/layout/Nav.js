@@ -1,5 +1,6 @@
 import { Navbar } from "react-bootstrap";
 import { Nav } from 'react-bootstrap';
+import Button from 'react-bootstrap/Button';
 import { useContext } from "react";
 import { 
     NavLink,
@@ -38,6 +39,9 @@ export default function Navigation() {
                         <NavLink to='/checkout'>
                         CHECKOUT
                         </NavLink>
+                        <Button type="primary" onClick={logout}>
+                        LOG OUT
+                        </Button>
                     </Nav>
                 </Navbar.Collapse>
                 </>

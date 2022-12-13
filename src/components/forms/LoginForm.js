@@ -4,6 +4,7 @@ import * as yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
 import axios from 'axios';
 import { BASE_URL, TOKEN_PATH } from '../../constants/api';
+import LoginError from '../common/LoginFormError';
 import { Form } from 'react-bootstrap';
 import { Button } from 'react-bootstrap';
 
@@ -45,13 +46,16 @@ export default function LoginForm () {
     return (
         <>
         <Form className='loginform shadow' onSubmit={handleSubmit(onSubmit)}>
+            {loginError && <LoginError>{loginError}</LoginError>}
             <Form.Group className='mb-3' controlId='formEmail' disabled={submitting}>
                 <Form.Label>Username</Form.Label>
                 <Form.Control type='username' placeholder='Enter username' ref={register} />
+                {errors.username && <LoginError>{errors.username.message}</LoginError>}
             </Form.Group>
             <Form.Group className='mb-3' controlId='formPassword' disabled={submitting}>
                 <Form.Label>Password</Form.Label>
                 <Form.Control type='password' placeholder='Enter Password' ref={register} />
+                {errors.password && <LoginError>{errors.password.message}</LoginError>}
             </Form.Group>
             <Button variant='primary' type='submit'>{submitting ? "Logging in..." : "Login"}</Button>
         </Form>
