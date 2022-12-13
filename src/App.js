@@ -7,7 +7,7 @@ import Checkout from './components/pages/checkout/Checkout';
 import Details from './components/pages/details/Details';
 import Navigation from './components/layout/Nav';
 import { AuthProvider } from './components/context/AuthContext';
-import './App.css';
+import './sass/style.scss';
 
 function App() {
   return (
