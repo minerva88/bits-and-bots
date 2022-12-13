@@ -1,9 +1,12 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
+import { useContext } from 'react';
 import * as yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
 import axios from 'axios';
 import { BASE_URL, TOKEN_PATH } from '../../constants/api';
+import AuthContext from '../context/AuthContext';
 import LoginError from '../common/LoginFormError';
 import { Form } from 'react-bootstrap';
 import { Button } from 'react-bootstrap';
@@ -21,9 +24,13 @@ export default function LoginForm () {
     const [submitting, setSubmitting] = useState(false);
     const [loginError, setLoginError] = useState(null);
 
+    const navigate = useNavigate();
+
     const { register, handleSubmit, errors } = useForm({
         resolver: yupResolver(schema),
     });
+
+    const [auth, setAuth] = useContext(AuthContext);
 
     async function onSubmit(data) {
         setSubmitting(true);
@@ -34,6 +41,8 @@ export default function LoginForm () {
         try {
             const response = await axios.post(url, data);
             console.log("response", response.data);
+            setAuth(response.data);
+            navigate('/browse');
         } catch (error) {
             console.log("error", error);
             setLoginError(error.toString());
@@ -47,15 +56,15 @@ export default function LoginForm () {
         <>
         <Form className='loginform shadow' onSubmit={handleSubmit(onSubmit)}>
             {loginError && <LoginError>{loginError}</LoginError>}
-            <Form.Group className='mb-3' controlId='formEmail' disabled={submitting}>
+            <Form.Group className='mb-3' controlId='loginEmail' disabled={submitting}>
                 <Form.Label>Username</Form.Label>
-                <Form.Control type='username' placeholder='Enter username' ref={register} />
-                {errors.username && <LoginError>{errors.username.message}</LoginError>}
+                <Form.Control type='username' placeholder='Enter username' {...register('username')} />
+                {errors && <LoginError>{errors}</LoginError>}
             </Form.Group>
-            <Form.Group className='mb-3' controlId='formPassword' disabled={submitting}>
+            <Form.Group className='mb-3' controlId='loginPassword' disabled={submitting}>
                 <Form.Label>Password</Form.Label>
-                <Form.Control type='password' placeholder='Enter Password' ref={register} />
-                {errors.password && <LoginError>{errors.password.message}</LoginError>}
+                <Form.Control type='password' placeholder='Enter Password' {...register('password')} />
+                {errors && <LoginError>{errors}</LoginError>}
             </Form.Group>
             <Button variant='primary' type='submit'>{submitting ? "Logging in..." : "Login"}</Button>
         </Form>
