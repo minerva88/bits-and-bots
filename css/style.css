@@ -17387,7 +17387,24 @@ fieldset:disabled .btn {
 }
 
 h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
+  font-family: "Rubik", sans-serif;
+  font-weight: 600;
+}
+
+p {
   font-family: "Rubik";
+  font-weight: 400;
+}
+
+.navbar-brand {
+  font-family: "Teko";
+  font-weight: 600;
+  font-size: 30px;
+  color: #fff;
+}
+
+.navbar {
+  background-color: #181D61;
 }
 
 * {
@@ -17421,5 +17438,9 @@ video {
 
 .loginform__button {
   margin: 0 auto 30px 15px;
+}
+
+.browser-card {
+  max-width: 300px;
 }
 /*# sourceMappingURL=style.css.map */
