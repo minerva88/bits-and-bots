@@ -56,17 +56,17 @@ export default function LoginForm () {
         <>
         <Form className='loginform shadow' onSubmit={handleSubmit(onSubmit)}>
             {loginError && <LoginError>{loginError}</LoginError>}
-            <Form.Group className='mb-3' controlId='loginEmail' disabled={submitting}>
+            <Form.Group className='loginform__username m-3' controlId='loginEmail' disabled={submitting}>
                 <Form.Label>Username</Form.Label>
                 <Form.Control type='username' placeholder='Enter username' {...register('username')} />
                 {errors && <LoginError>{errors}</LoginError>}
             </Form.Group>
-            <Form.Group className='mb-3' controlId='loginPassword' disabled={submitting}>
+            <Form.Group className='loginform__password m-3' controlId='loginPassword' disabled={submitting}>
                 <Form.Label>Password</Form.Label>
                 <Form.Control type='password' placeholder='Enter Password' {...register('password')} />
                 {errors && <LoginError>{errors}</LoginError>}
             </Form.Group>
-            <Button variant='primary' type='submit'>{submitting ? "Logging in..." : "Login"}</Button>
+            <Button className='loginform__button' variant='primary' type='submit'>{submitting ? "Logging in..." : "Login"}</Button>
         </Form>
         </>
     )
