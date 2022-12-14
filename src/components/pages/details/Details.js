@@ -1,4 +1,5 @@
+import GetGameDetails from "../../ui/GetGameDetails";
 
 export default function Details() {
-    return <h1>This is the details page</h1>
+    return <GetGameDetails />
 }
