@@ -18,7 +18,7 @@ export default function Navigation() {
 
     function logout() {
         setAuth(null);
-        navigate.push('/');
+        navigate('/');
     }
 
     return (
