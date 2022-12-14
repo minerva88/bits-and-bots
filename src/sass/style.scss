@@ -10,6 +10,10 @@
 
 //Globals
 
+@import "partials/globals/base";
+@import "partials/globals/typography";
+@import "partials/globals/nav";
+
 //Home
 
 @import 'partials/layout/home/background';

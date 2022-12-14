@@ -1,0 +1,21 @@
+$colors: (
+    white: #fff,
+    black: #000,
+    blue: #181D61,
+    violet: #7E30B9,
+);
+
+@function getColor($color) {
+    @return map-get($colors, $color);
+}
+
+$fonts: (
+    brand: 'Teko',
+    header: 'Rubik',
+    paragraph: 'Rubik',
+    button: 'Hanken Grotesk',
+);
+
+@function getFont($font) {
+    @return map-get($fonts, $font);
+}

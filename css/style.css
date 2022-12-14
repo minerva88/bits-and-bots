@@ -17386,6 +17386,10 @@ fieldset:disabled .btn {
   }
 }
 
+h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
+  font-family: "Rubik";
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -17394,6 +17398,8 @@ fieldset:disabled .btn {
 .main {
   width: 100%;
   height: 100vh;
+  top: 0;
+  bottom: 0;
 }
 
 video {
@@ -17411,5 +17417,9 @@ video {
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
   border-radius: 0;
+}
+
+.loginform__button {
+  margin: 0 auto 30px 15px;
 }
 /*# sourceMappingURL=style.css.map */

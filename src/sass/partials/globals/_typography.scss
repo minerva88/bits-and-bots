@@ -1,0 +1,16 @@
+h1, h2, h3, h4 {
+    font-family: getFont(header), sans-serif;
+    font-weight: 600;
+}
+
+p {
+    font-family: getFont(paragraph);
+    font-weight: 400;
+}
+
+.navbar-brand {
+    font-family: getFont(brand);
+    font-weight: 600;
+    font-size: 30px;
+    color: getColor(white);
+}

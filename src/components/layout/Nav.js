@@ -23,12 +23,12 @@ export default function Navigation() {
 
     return (
         <>
-        <Navbar bg="dark" variant="dark" expand="lg">
+        <Navbar className="" expand="lg">
             <Navbar.Brand href="/">BITS & BOTS</Navbar.Brand>
             {auth ? (
                 <>
                 <Navbar.Toggle aria-controls='basic-navbar-nav' />
-                <Navbar.Collapse id='basic-navbar-nav'>
+                <Navbar.Collapse className="justify-content-end" id='basic-navbar-nav'>
                     <Nav className='mr-auto'>
                         <NavLink to='/browse'>
                         BROWSE
