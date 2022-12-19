@@ -1,3 +1,11 @@
 .browse-card {
     max-width: 200px;
+
+    &__excerpt {
+        display: none;
+    }
+
+    &__excerpt:hover {
+        display: block;
+    }
 }
