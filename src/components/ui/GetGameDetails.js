@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { BASE_URL, ALLGAMES_PATH } from "../../constants/api";
-import { Container } from "react-bootstrap";
 import { Row } from "react-bootstrap";
 import { Col } from "react-bootstrap";
 import parse from "html-react-parser";
@@ -54,15 +53,15 @@ export default function GetGameDetails() {
     }
 
     return (
-        <Container className="game-details">
+        <div className="game-details">
             <Row>
                 <h1 className="game-details__title">{game.title.rendered}</h1>
                 <img className="game-details__coverimage" src={game.better_featured_image.media_details.sizes.medium.source_url} alt={game.better_featured_image.alt_text} width="150px" />
             </Row>
             <Col>
-                <Container className="game-details__content">{parse(game.content.rendered)}</Container>
+                <div className="game-details__content">{parse(game.content.rendered)}</div>
             </Col>
 
-        </Container>
+        </div>
     );
 }

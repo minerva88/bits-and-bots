@@ -1,5 +1,9 @@
 .game-details {
 
+    display: flex;
+    flex-direction: column;
+    max-width: 900px;
+
     &__coverimage {
         max-width: 150px;
     }

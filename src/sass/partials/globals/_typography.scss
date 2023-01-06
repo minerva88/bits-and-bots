@@ -8,9 +8,25 @@ p {
     font-weight: 400;
 }
 
+a {
+    font-family: getFont(button);
+    text-decoration: none;
+    color: getColor(white);
+    
+}
+
+button {
+    color: getColor(white);
+}
+
 .navbar-brand {
     font-family: getFont(brand);
     font-weight: 600;
     font-size: 30px;
     color: getColor(white);
+}
+
+.nav-item {
+    background: getColor(blue);
+    font-family: getFont(button);
 }

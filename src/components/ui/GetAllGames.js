@@ -20,7 +20,8 @@ export default function GetAllGames() {
 
     return (
         <>
-        <div className='col'>
+        <div className='container'>
+        <div className='row'>
             {games.map(function (game) {
                 
                 return (
@@ -32,6 +33,7 @@ export default function GetAllGames() {
                                 <Card.Text className='browse-card__excerpt'>{parse(game.excerpt.rendered)}</Card.Text>
                                 <Link to={`details/${game.id}`}>
                                 <Button type="primary">View details</Button>
+                                <Button type='danger'>Add to cart</Button>
                                 </Link>
                             </Card.Body>
                         </Card>
@@ -40,6 +42,7 @@ export default function GetAllGames() {
 
                 
             })}
+        </div>
         </div>
         </>
     )

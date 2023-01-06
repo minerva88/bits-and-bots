@@ -1,5 +1,11 @@
 .browse-card {
     max-width: 200px;
+    border-radius: 0;
+    margin: 30px 15px;
+
+    &__image {
+        margin: 15px auto;
+    }
 
     &__excerpt {
         display: none;

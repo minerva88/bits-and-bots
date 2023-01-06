@@ -5,7 +5,11 @@
     left: 50%;
     transform: translate(-50%, -50%);
     border-radius: 0;
+    background: getColor(blue);
     
+    @media (max-width: 600px) {
+      width: 80%;
+    }
   }
 
   .loginform {

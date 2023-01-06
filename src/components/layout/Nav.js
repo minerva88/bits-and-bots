@@ -23,23 +23,23 @@ export default function Navigation() {
 
     return (
         <>
-        <Navbar className="" expand="lg">
-            <Navbar.Brand href="/">BITS & BOTS</Navbar.Brand>
+        <Navbar className="navbar" expand="lg">
+            <Navbar.Brand className="navbar__brand" href="/">BITS & BOTS</Navbar.Brand>
             {auth ? (
                 <>
                 <Navbar.Toggle aria-controls='basic-navbar-nav' />
                 <Navbar.Collapse className="justify-content-end" id='basic-navbar-nav'>
-                    <Nav className='mr-auto'>
-                        <NavLink to='/browse'>
+                    <Nav className="navbar__nav">
+                        <NavLink className="navbar__item" to='/browse'>
                         BROWSE
                         </NavLink>
-                        <NavLink to='/cart'>
+                        <NavLink className="navbar__item" to='/cart'>
                         CART
                         </NavLink>
-                        <NavLink to='/checkout'>
+                        <NavLink className="navbar__item" to='/checkout'>
                         CHECKOUT
                         </NavLink>
-                        <Button type="primary" onClick={logout}>
+                        <Button className="navbar__item" type="primary" onClick={logout}>
                         LOG OUT
                         </Button>
                     </Nav>
