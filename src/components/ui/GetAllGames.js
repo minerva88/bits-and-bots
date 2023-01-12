@@ -10,7 +10,7 @@ import parse from "html-react-parser";
 export default function GetAllGames() {
 
     const [games, loading, error] = useFetch();
-    const [cartItems, toggleItem] = useCart();
+    const [cartItems, toggleItemInCart] = useCart();
 
     if (loading) {
         return <div>Loading...</div>;
@@ -37,7 +37,7 @@ export default function GetAllGames() {
                                 <Link to={`details/${game.id}`}>
                                 <Button variant="primary">View details</Button>
                                 </Link>
-                                <Button variant="danger" data-title={game.title.rendered} data-image={game.better_featured_image.media_details.sizes.medium.source_url} onClick={toggleItem(game.id)}>
+                                <Button variant="danger" data-title={game.title.rendered} data-image={game.better_featured_image.media_details.sizes.medium.source_url} onClick={toggleItemInCart(game.id)}>
                                 {isItemInCart ? "Remove from cart" : "Add to cart"}</Button>
                                 
                             </Card.Body>
