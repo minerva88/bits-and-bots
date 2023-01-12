@@ -7,6 +7,7 @@ import Checkout from './components/pages/checkout/Checkout';
 import Details from './components/pages/details/Details';
 import Navigation from './components/layout/Nav';
 import { AuthProvider } from './components/context/AuthContext';
+import "react-toastify/dist/ReactToastify.css";
 import './sass/style.scss';
 
 function App() {
