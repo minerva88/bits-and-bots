@@ -38,7 +38,7 @@ export default function GetAllGames() {
                                 <Button variant="primary">View details</Button>
                                 </Link>
                                 <Button variant="danger" data-title={game.title.rendered} data-image={game.better_featured_image.media_details.sizes.medium.source_url} onClick={toggleItemInCart(game.id)}>
-                                {isItemInCart ? "Remove from cart" : "Add to cart"}</Button>
+                                {isItemInCart ? "Remove" : "Add to cart"}</Button>
                                 
                             </Card.Body>
                         </Card>

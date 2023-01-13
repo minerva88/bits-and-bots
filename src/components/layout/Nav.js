@@ -18,6 +18,7 @@ export default function Navigation() {
 
     function logout() {
         setAuth(null);
+        localStorage.clear();
         navigate('/');
     }
 

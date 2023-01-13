@@ -1,4 +1,13 @@
+import CheckoutForm from "../../forms/CheckoutForm"
 
 export default function Checkout() {
-    return <h1>This is the Checkout page</h1>;
+    
+    return (
+        <>
+        <div className="container">
+        <h1>Checkout</h1>
+        <CheckoutForm />
+        </div>
+        </>
+    )
 }

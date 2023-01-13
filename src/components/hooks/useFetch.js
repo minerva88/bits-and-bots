@@ -17,7 +17,6 @@ export default function useFetch() {
 
                 if (res.ok) {
                     const json = await res.json();
-                    console.log(json);
                     setGames(json);
                 } else {
                     setError('An error occured');

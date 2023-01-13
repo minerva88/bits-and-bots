@@ -10,6 +10,9 @@ export default function GetAdventureGames() {
 
     const [games, loading, error] = useFetch();
 
+    console.log(games);
+
+
     if (loading) {
         return <div>Loading...</div>;
     }
@@ -18,13 +21,18 @@ export default function GetAdventureGames() {
         return <div>An error occured: {error}</div>;
     }
 
+    //const filteredGames = games.filter((game) => {
+        //return game.tags.includes(58);
+    //})
+
+    //console.log(filteredGames);
+
     return (
         <>
         <div className='row'>
-            {games.map(function (game) {
-                return game.tags !== 58 ? ( 
-                    <div key={game.id}></div> 
-                ) : (
+            {games.filter(game => game.tags.includes(58)).map((game) => {
+                
+                    
                     <Card key={game.id} className="browse-card">
                             <Card.Img className="browse-card__image" src={game.better_featured_image.media_details.sizes.medium.source_url} alt={game.better_featured_image.alt_text} />
                             <Card.Body>
@@ -35,7 +43,8 @@ export default function GetAdventureGames() {
                                 </Link>
                             </Card.Body>
                     </Card>
-                );
+                    
+                
                 
                 
 
