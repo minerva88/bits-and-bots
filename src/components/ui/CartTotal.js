@@ -10,7 +10,7 @@ export default function CartTotal() {
     return (
         <Card className="totalcard">
             <Card.Title className="totalcard__title">
-                Total amount of items in cart: {cartItems.length}
+                Total amount of items in cart: {cartItems.length + 1}
             </Card.Title>
             <Link to={"/cart"}>
             <Button variant="primary">Back to cart</Button>

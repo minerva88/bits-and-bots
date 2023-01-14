@@ -1,6 +1,8 @@
 import useCart from "../../hooks/useCart";
 import useFetch from "../../hooks/useFetch";
 import { Card } from "react-bootstrap";
+import { Button } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 
 export default function Cart() {
@@ -19,7 +21,7 @@ export default function Cart() {
     return (
         <>
         <div className="container">
-        <div className="col-md">
+        <div className="col-sm">
             <h1>Your Cart</h1>
             {cartItems.map(function (game) {
 
@@ -30,6 +32,9 @@ export default function Cart() {
                     </Card>
                 )
             })}
+            <Link to={'/checkout'}>
+            <Button variant="primary">Proceed to checkout</Button>
+            </Link>
         </div>
         </div>
         </>
