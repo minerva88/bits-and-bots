@@ -13,9 +13,8 @@ const schema = yup.object().shape({
     zipCode: yup.number().required("Please enter your zip code").min(4),
     city: yup.string().required("Please enter your city name").min(5),
     cardNumber: yup.number().required("Please enter your creditcard number").min(16).max(16),
-    expiryMonth: yup.number().required("Please enter expiry month").min(2).max(2),
-    expiryYear: yup.number().required("Please enter expiry month").min(2).max(2),
-    cvc: yup.number().required("Please enter your cvc-code"),
+    expiryMonthYear: yup.number().required("Please enter expiry month"),
+    cvc: yup.number().required("Please enter your cvc-code").min(3),
 
 });
 
@@ -52,17 +51,16 @@ export default function CheckoutForm() {
             </Form.Group>
             <Form.Group className="checkoutform__adress m-3" controlId="checkoutAdress" disabled={checkout}>
                 <Form.Label>Adress</Form.Label>
-                <Form.Control className="checkoutform__adress--adress" type="adress" placeholder="Enter street adress" {...register("adress")} />
-                <Form.Control className="checkoutform__adress--zip" type="zip" placeholder="Enter zipcode" {...register("zipCode")} />
-                <Form.Control className="checkoutform__adress--city" type="city" placeholder="Enter city" {...register("city")} />
+                <Form.Control className="checkoutform__adress--adress my-2" type="adress" placeholder="Enter street adress" {...register("adress")} />
+                <Form.Control className="checkoutform__adress--zip my-2" type="zip" placeholder="Enter zipcode" {...register("zipCode")} />
+                <Form.Control className="checkoutform__adress--city my-2" type="city" placeholder="Enter city" {...register("city")} />
                 {error && <CheckoutError>{errors}</CheckoutError>}
             </Form.Group>
             <Form.Group className="checkoutform__cardinfo m-3" controlId="checkoutCard" disabled={checkout}>
                 <Form.Label>Credit card info</Form.Label>
-                <Form.Control className="checkoutform__cardinfo--cardnumber" type="cardnumber" placeholder="Enter credit card number" {...register("cardnumber")} />
-                <Form.Control className="checkoutform__cardinfo--exmonth" type="month" placeholder="Exp month" {...register("expiryMonth")} />
-                <Form.Control className="checkoutform__cardinfo--year" type="year" placeholder="Exp year" {...register("expiryYear")} />
-                <Form.Control className="checkoutform__cardinfo--cvc" type="cvc" placeholder="CVC" {...register("cvc")} />
+                <Form.Control className="checkoutform__cardinfo--cardnumber my-2" type="cardnumber" placeholder="Enter credit card number" {...register("cardnumber")} />
+                <Form.Control className="checkoutform__cardinfo--exmonth my-2" type="month" placeholder="Exp month/year" {...register("expiryMonthYear")} />
+                <Form.Control className="checkoutform__cardinfo--cvc my-2" type="cvc" placeholder="CVC" {...register("cvc")} />
                 {error && <CheckoutError>{errors}</CheckoutError>}
             </Form.Group>
             <Button className="checkoutform__button m-3" variant="primary" type="submit">{checkout ? "Checking out.." : "Checkout"}</Button>
