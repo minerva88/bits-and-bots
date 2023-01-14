@@ -1,5 +1,12 @@
 import GetGameDetails from "../../ui/GetGameDetails";
+import { Col } from "react-bootstrap";
 
 export default function Details() {
-    return <GetGameDetails />
+    return (
+        <>
+        <Col className="md">
+        <GetGameDetails />
+        </Col>
+        </>
+    )
 }

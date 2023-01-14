@@ -3,7 +3,6 @@ import useCart from '../hooks/useCart';
 import { Link } from 'react-router-dom';
 import { Card } from 'react-bootstrap';
 import { Button } from 'react-bootstrap';
-import parse from "html-react-parser";
 
 
 
