@@ -17396,6 +17396,16 @@ p {
   font-weight: 400;
 }
 
+a {
+  font-family: "Hanken Grotesk";
+  text-decoration: none;
+  color: #fff;
+}
+
+button {
+  color: #fff;
+}
+
 .navbar-brand {
   font-family: "Teko";
   font-weight: 600;
@@ -17403,8 +17413,25 @@ p {
   color: #fff;
 }
 
+.nav-item {
+  background: #181D61;
+  font-family: "Hanken Grotesk";
+}
+
 .navbar {
   background-color: #181D61;
+}
+
+.navbar__brand {
+  margin-left: 1.5rem;
+}
+
+.navbar__nav {
+  margin-right: 1rem;
+}
+
+.navbar__item {
+  margin: auto 10px;
 }
 
 * {
@@ -17434,6 +17461,13 @@ video {
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
   border-radius: 0;
+  background: #181D61;
+}
+
+@media (max-width: 600px) {
+  .logincard {
+    width: 80%;
+  }
 }
 
 .loginform__button {
@@ -17442,5 +17476,34 @@ video {
 
 .browse-card {
   max-width: 200px;
+  border-radius: 0;
+  margin: 30px 15px;
+}
+
+.browse-card__image {
+  margin: 15px auto;
+}
+
+.browse-card__excerpt {
+  display: none;
+}
+
+.browse-card__excerpt:hover {
+  display: block;
+}
+
+.game-details {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  max-width: 900px;
+}
+
+.game-details__coverimage {
+  max-width: 150px;
 }
 /*# sourceMappingURL=style.css.map */

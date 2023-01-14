@@ -4,15 +4,17 @@
 @import "../../node_modules/bootstrap/scss/variables";
 @import "../../node_modules/bootstrap/scss/mixins/breakpoints";
 
-//Custom Bootstrap
 
-@import "partials/globals/custombootstrap";
 
 //Globals
 
 @import "partials/globals/base";
 @import "partials/globals/typography";
 @import "partials/globals/nav";
+
+//Custom Bootstrap
+
+@import "partials/globals/custombootstrap";
 
 //Home
 

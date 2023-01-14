@@ -53,7 +53,7 @@ export default function GetGameDetails() {
     }
 
     return (
-        <div className="game-details">
+        <div className="game-details container">
             <Row>
                 <h1 className="game-details__title">{game.title.rendered}</h1>
                 <img className="game-details__coverimage" src={game.better_featured_image.media_details.sizes.medium.source_url} alt={game.better_featured_image.alt_text} width="150px" />
