@@ -1,10 +1,11 @@
 import useCart from "../../hooks/useCart";
+import useFetch from "../../hooks/useFetch";
 import { Card } from "react-bootstrap";
 
 
 export default function Cart() {
 
-    
+    const [games, loading, error] = useFetch();
     const [cartItems, toggleItemInCart] = useCart();
 
     if (cartItems.length === 0) {
@@ -12,6 +13,9 @@ export default function Cart() {
     }
     
     console.log(cartItems);
+
+    const cartItemsData = games.filter((game) => game.id === cartItems.id);
+    console.log(cartItemsData);
     return (
         <>
         <div className="container">

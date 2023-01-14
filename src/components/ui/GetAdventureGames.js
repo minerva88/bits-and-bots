@@ -21,6 +21,7 @@ export default function GetAdventureGames() {
 
     return (
         <>
+        <div className='container'>
         <div className='row'>
             {games.filter(game => game.tags.includes(58)).map((game) => {
                 
@@ -45,6 +46,7 @@ export default function GetAdventureGames() {
 
                 
             })}
+        </div>
         </div>
         </>
     );

@@ -40,7 +40,7 @@ export default function Navigation() {
                         <NavLink className="navbar__item" to='/checkout'>
                         CHECKOUT
                         </NavLink>
-                        <Button className="navbar__item" type="primary" onClick={logout}>
+                        <Button className="navbar__item--logout" variant="danger" onClick={logout}>
                         LOG OUT
                         </Button>
                     </Nav>

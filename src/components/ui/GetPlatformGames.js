@@ -21,6 +21,7 @@ export default function GetPlatformGames() {
 
     return (
         <>
+        <div className='container'>
         <div className='row'>
             {games.filter(game => game.tags.includes(59)).map((game) => {
                 
@@ -45,6 +46,7 @@ export default function GetPlatformGames() {
 
                 
             })}
+        </div>
         </div>
         </>
     );
