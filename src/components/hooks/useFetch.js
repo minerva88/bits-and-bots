@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { BASE_URL, ALLGAMES_PATH } from "../../constants/api";
 
-const url = BASE_URL + ALLGAMES_PATH;
+const url = BASE_URL + ALLGAMES_PATH + "?per_page=100";
 
 export default function useFetch() {
 

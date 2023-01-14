@@ -33,7 +33,6 @@ export default function GetAllGames() {
                             <Card.Img className="browse-card__image" src={game.better_featured_image.media_details.sizes.medium.source_url} alt={game.better_featured_image.alt_text} />
                             <Card.Body>
                                 <Card.Title className='browse-card__title'>{game.title.rendered}</Card.Title>
-                                <Card.Text className='browse-card__excerpt'>{parse(game.excerpt.rendered)}</Card.Text>
                                 <Link to={`details/${game.id}`}>
                                 <Button variant="primary">View details</Button>
                                 </Link>
