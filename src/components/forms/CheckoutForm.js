@@ -6,6 +6,7 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import CheckoutError from "../common/CheckoutError";
 import { Form } from "react-bootstrap";
 import { Button } from "react-bootstrap";
+import SuccessModal from "../common/SuccessModal";
 
 const schema = yup.object().shape({
     name: yup.string().required("Please enter your full name").min(10),
@@ -35,8 +36,11 @@ export default function CheckoutForm() {
 
         console.log(data);
 
-        //display success modal here
-        //delete cart from localStorage
+        if (data) {
+            return <SuccessModal />;
+        }
+
+        localStorage.clear('cartItems');
         navigate('/browse');
     }
 
